@@ -25,7 +25,7 @@ This README briefly documents how the project was created and the actions perfor
    - Created folders: `pages/`, `tests/`, `specs/`
    - `specs/` is used by the Playwright planner agent and contains `login.md`.
 
-5. Planner-driven work performed by the assistant
+5. Agent-driven work performed by the playwright planner agent
 
    - Opened `http://localhost:3000/signin` to inspect the sign-in page.
    - Captured the DOM snapshot and extracted interactive elements: `#username`, `#password`, `input[name=remember]`, the Sign In button (`button[type=submit]`), and the Sign Up link.

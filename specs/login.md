@@ -35,8 +35,8 @@ Each scenario includes: starting state, step-by-step instructions, expected resu
 
 Steps:
 1. Open `http://localhost:3000/signin` in a new browser session.
-2. Click (or tab to) the Username field and type `valid_user@example.com`.
-3. Click (or tab to) the Password field and type `CorrectPassword123`.
+2. Click (or tab to) the Username field and type `demologin`.
+3. Click (or tab to) the Password field and type `demopass`.
 4. Ensure the "Remember me" checkbox is unchecked for this scenario.
 5. Click the "Sign In" button (or press Enter while focused in the password field).
 
