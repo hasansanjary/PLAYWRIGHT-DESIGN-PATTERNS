@@ -2,10 +2,13 @@
   "name": "playwright-realworld-app",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:realworld": "npx playwright test e2e/tests/realworld-login/realworld.spec.ts --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.56.1",

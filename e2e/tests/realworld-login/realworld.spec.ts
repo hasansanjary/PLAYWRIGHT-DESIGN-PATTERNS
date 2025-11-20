@@ -10,7 +10,7 @@ test.describe('Sign in page', () => {
   test('successful login with valid credentials', async ({ page }) => {
     // Enter valid credentials
     await realWorldLogin(page, loginData);
-    
+
     // Verify successful login and redirect to authenticated landing page
     await expect(page).not.toHaveURL(/\/signin/);
 

@@ -13,6 +13,7 @@ component.actions.ts: Contains reusable user interaction methods (clicks, naviga
 component.locators.ts: Encapsulates all UI element selectors.
 component.data.ts: Manages test data and fixtures.
 component.spec.ts: Contains actual test definitions.
+
 This functional decomposition contrasts with monolithic page classes in classic POMs, making it easier to compose, extend, and maintain test code as your application grows.
 
 The Structure
