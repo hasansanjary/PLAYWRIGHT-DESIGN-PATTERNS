@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:realworld": "npx playwright test e2e/tests/realworld-login/realworld.spec.ts --headed"
+    "test:realworld": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts", 
+    "test:realworld:chrome": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=chromium",
+    "test:realworld:firefox": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=firefox",
+    "test:realworld:webkit": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=webkit"
   },
   "keywords": [],
   "author": "",

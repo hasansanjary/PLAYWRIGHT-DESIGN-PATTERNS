@@ -21,8 +21,7 @@ Here’s what a typical FPM setup looks like in your Playwright repo:
 
 e2e/
 └── tests/
-    └── clients/
-        └── FPM/
+    └── realworld-login/
             ├── realworld.actions.ts
             ├── realworld.locators.ts
             ├── realworld.data.ts

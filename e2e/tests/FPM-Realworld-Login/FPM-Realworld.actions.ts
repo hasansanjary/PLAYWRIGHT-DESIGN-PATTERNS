@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
-import * as Locators from './realworld.locators';
-import { loginData } from './realworld.data';
+import * as Locators from './FPM-Realworld.locators';
+import { loginData } from './FPM-Realworld.data';
 
 export const realWorldLogin = async (page: Page, logInput: typeof loginData) => {
   await Locators.username(page).fill(logInput.username);
