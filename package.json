@@ -4,9 +4,18 @@
   "main": "index.js",
   "scripts": {
     "test:realworld": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts", 
+    "test:realworld:headed": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed",
+    "test:realworld:ui": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --ui",
+    "test:realworld:debug": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --debug",
+    "test:realworld:trace": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --trace=on",
+    "test:realworld:report": "npx playwright show-report",
+    
     "test:realworld:chrome": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=chromium",
     "test:realworld:firefox": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=firefox",
-    "test:realworld:webkit": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=webkit"
+    "test:realworld:webkit": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=webkit",
+    "test:realworld:mobile-chrome": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=Mobile Chrome",
+    "test:realworld:mobile-safari": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project='Mobile Safari'",
+    "test:realworld:all": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=chromium --project=firefox --project=webkit --project='Mobile Chrome' --project='Mobile Safari'"
   },
   "keywords": [],
   "author": "",
