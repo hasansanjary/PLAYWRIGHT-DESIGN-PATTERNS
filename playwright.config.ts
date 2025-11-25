@@ -24,16 +24,28 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+
+  /*
+    webServer: {
+    // Run yarn dev from the project directory
+    command: 'yarn dev',
+    url: 'http://localhost:3000', // adjust if your app runs on another port
+    reuseExistingServer: !process.env.CI,
+    cwd: 'C:/Users/Admin/Desktop/cypress-realworld-app', // 👈 set working directory
+    timeout: 120 * 1000, // optional: increase if startup is slow
+  },
+  */
+
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
 
-    // screenshot: 'on',
+    screenshot: 'on',
 
-    // video: 'on'
+    video: 'on'
   
   },
 

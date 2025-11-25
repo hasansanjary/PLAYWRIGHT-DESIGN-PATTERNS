@@ -4,7 +4,8 @@ import { realWorldLogin } from './FPM-Realworld.actions';
 
 test.describe('Sign in page', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/signin');
+    // await page.goto('http://localhost:3000/signin');
+    await page.goto('/');
   });
 
   test('successful login with valid credentials', async ({ page }) => {
