@@ -14,7 +14,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './e2e/tests/FPM-Realworld-Login',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -52,18 +52,35 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'data-setup',
+      testMatch: /.*\.data-load\.setup\.ts/,
+      teardown: 'data-cleanup',
+    },
+
+     {
+      name: 'data-cleanup',
+      testMatch: /.*\.data-cleanup\.ts/,
+    },
+
+    {
+      name: 'smoke',
+      use: { ...devices['Desktop Chrome'],
+        viewport: { width: 1280, height: 720 },
+        baseURL: 'http://localhost:3000',
+        trace: 'on'
+
+      },
+      testMatch: /.*\.spec\.ts/,
+      dependencies: ['data-setup'],
+      fullyParallel: false,
+      
+    },
+
+    {
+      name: 'regression',
       use: { ...devices['Desktop Chrome'] },
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      testIgnore: /.*\.spec\.ts/,
+      dependencies: ['smoke'],
     },
 
     /* Test against mobile viewports. */
