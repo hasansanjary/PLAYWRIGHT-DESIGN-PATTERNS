@@ -17,7 +17,10 @@
     "test:realworld:webkit": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=webkit",
     "test:realworld:mobile-chrome": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=Mobile Chrome",
     "test:realworld:mobile-safari": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project='Mobile Safari'",
-    "test:realworld:all": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=chromium --project=firefox --project=webkit --project='Mobile Chrome' --project='Mobile Safari'"
+    "test:realworld:all": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=chromium --project=firefox --project=webkit --project='Mobile Chrome' --project='Mobile Safari'",
+
+    "test:pom:login": "npx playwright test e2e/tests/POM-Login-TestExamples/login.spec.ts --headed",
+    "test:cross-browser": "npx playwright test e2e/tests/cross_browser_Test/cross-browser.spec.ts --headed"
   },
   "keywords": [],
   "author": "",
