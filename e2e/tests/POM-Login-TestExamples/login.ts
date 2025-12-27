@@ -30,18 +30,22 @@ export class LoginPage {
         // await this.rememberMeCheckbox.uncheck();
         await this.signInButton.click();
 
-  
+
 
     }
-/*
-    async newLogin(logInput: typeof loginData) {
 
-      await Locators.username(this.page).fill(logInput.username);
-      await Locators.password(this.page).fill(logInput.password);
-    //   await Locators.remember(this.page).uncheck();
-      await Locators.signInButton(this.page).click();
+    async clickLoginButton() {
+        await this.signInButton.click();
+    }
+    /*
+        async newLogin(logInput: typeof loginData) {
     
-    };
-    
-*/
+          await Locators.username(this.page).fill(logInput.username);
+          await Locators.password(this.page).fill(logInput.password);
+        //   await Locators.remember(this.page).uncheck();
+          await Locators.signInButton(this.page).click();
+        
+        };
+        
+    */
 }
