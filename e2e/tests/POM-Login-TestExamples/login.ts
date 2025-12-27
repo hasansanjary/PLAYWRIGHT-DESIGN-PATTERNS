@@ -1,22 +1,34 @@
 import { Page, Locator } from "@playwright/test";
+import * as Locators from './Login-Locator';
+import { loginData } from '../FPM-Realworld-Login/FPM-Realworld.data';
+
 
 export class LoginPage {
 
     readonly page: Page;
     readonly usernameInput: Locator;
     readonly passwordInput: Locator;
-    // readonly rememberMeCheckbox: Locator;
+    readonly rememberMeCheckbox: Locator;
     readonly signInButton: Locator;
-
-
-
+    readonly emptyLoginFieldValidation: Locator;
+    readonly loginForm: Locator;
+    readonly internalErrorMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.usernameInput = page.locator('//input[@type=\'text\']');
-        this.passwordInput = page.locator('//input[@type=\'password\']');
+
+        // this.usernameInput = page.locator('//input[@type=\'text\']');
+        // this.passwordInput = page.locator('//input[@type=\'password\']');
         // this.rememberMeCheckbox = page.locator('input[name=remember]');
-        this.signInButton = page.locator('//input[@type="submit"]');
+        // this.signInButton = page.locator('//input[@type="submit"]');
+
+        this.usernameInput = Locators.username(page);
+        this.passwordInput = Locators.password(page);
+        this.rememberMeCheckbox = Locators.remember(page);
+        this.signInButton = Locators.signInButton(page);
+        this.emptyLoginFieldValidation = Locators.emptyLoginFieldValidation(page);
+        this.loginForm = Locators.loginForm(page);
+        this.internalErrorMessage = Locators.internalErrorMessage(page);
     }
 
     async navigateToLoginPage(url: string) {
@@ -24,9 +36,9 @@ export class LoginPage {
     }
 
 
-    async loginPage(username: string, password: string) {
-        await this.usernameInput.fill(username);
-        await this.passwordInput.fill(password);
+    async loginPage(logData: typeof loginData ) {
+        await this.usernameInput.fill(logData.username);
+        await this.passwordInput.fill(logData.password);
         // await this.rememberMeCheckbox.uncheck();
         await this.signInButton.click();
 

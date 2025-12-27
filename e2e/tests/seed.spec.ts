@@ -8,7 +8,7 @@ test.describe('xyz', () => {
     const Page = loginPage;
 
     await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-    await Page.loginPage('demo', 'demopass');
+    // await Page.loginPage('demo', 'demopass');
 
   });
 
@@ -25,4 +25,5 @@ test.describe('xyz', () => {
     // Optionally, check that user is not logged in (e.g., login form still visible)
     await expect(page.locator('//form[@name=\'login\']')).toBeVisible();
   });
+
 });

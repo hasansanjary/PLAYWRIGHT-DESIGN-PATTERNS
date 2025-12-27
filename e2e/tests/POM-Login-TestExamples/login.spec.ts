@@ -3,16 +3,16 @@ import { LoginPage } from './login';
 
 test.describe('Sign in page', () => {
 
-  // test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page }) => {
 
-  //   const loginPage = new LoginPage(page);
-  //   await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
+    const loginPage = new LoginPage(page);
+    await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
 
-  // });
+  });
 
-  // test.afterEach(async ({ page }) => {
-  //   await page.close();
-  // });
+  test.afterEach(async ({ page }) => {
+    await page.close();
+  });
 
   test('successful login with valid credentials using POM', async ({ page }) => {
 
@@ -32,7 +32,7 @@ test.describe('Sign in page', () => {
     // await expect(page).toHaveURL('https://parabank.parasoft.com/parabank/overview.htm');
 
     //Taking screenshot and pdf of the logged in page
-    
+
     await page.screenshot({ path: 'pom-login.png', fullPage: true });
     await page.pdf({ path: 'pom-login.pdf', format: 'A4' });
 
