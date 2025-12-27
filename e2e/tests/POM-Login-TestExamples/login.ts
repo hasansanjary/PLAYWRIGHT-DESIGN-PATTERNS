@@ -1,6 +1,4 @@
 import { Page, Locator } from "@playwright/test";
-import { loginData } from "./login_data";
-import * as Locators from "./login_Locators";
 
 export class LoginPage {
 
@@ -12,6 +10,7 @@ export class LoginPage {
 
 
 
+
     constructor(page: Page) {
         this.page = page;
         this.usernameInput = page.locator('//input[@type=\'text\']');
@@ -20,12 +19,18 @@ export class LoginPage {
         this.signInButton = page.locator('//input[@type="submit"]');
     }
 
+    async navigateToLoginPage(url: string) {
+        await this.page.goto(url);
+    }
 
-    async login(username: string, password: string) {
+
+    async loginPage(username: string, password: string) {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         // await this.rememberMeCheckbox.uncheck();
         await this.signInButton.click();
+
+  
 
     }
 /*

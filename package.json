@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:login": "npx playwright test e2e/tests/login.spec.ts",
     "test:realworld": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts", 
     "test:realworld:headed": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed",
     "test:realworld:ui": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --ui",
@@ -19,8 +18,14 @@
     "test:realworld:mobile-safari": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project='Mobile Safari'",
     "test:realworld:all": "npx playwright test e2e/tests/FPM-Realworld-Login/FPM-Realworld.spec.ts --headed --project=chromium --project=firefox --project=webkit --project='Mobile Chrome' --project='Mobile Safari'",
 
-    "test:pom:login": "npx playwright test e2e/tests/POM-Login-TestExamples/login.spec.ts --headed",
-    "test:cross-browser": "npx playwright test e2e/tests/cross_browser_Test/cross-browser.spec.ts --headed"
+    "test:login": "npx playwright test e2e/tests/POM-Login-TestExamples/login.spec.ts --headed",
+    "test:cross-browser": "npx playwright test e2e/tests/cross_browser_Test/cross-browser.spec.ts --headed",
+    "test:fixtures": "npx playwright test e2e/tests/Fixtures/browser_context_page_fixtures.spec.ts --headed",
+
+  
+    "test:checkbox": "npx playwright test e2e/tests/Lamdatest/checkboxes.spec.ts --headed"
+
+  
   },
   "keywords": [],
   "author": "",
