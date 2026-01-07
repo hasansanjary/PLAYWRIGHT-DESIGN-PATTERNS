@@ -1,7 +1,8 @@
 import { test, expect, chromium } from '@playwright/test';
-import { LoginPage } from './login';
+import { LoginPage } from './Login-Page';
+import { loginData } from './Login-Data';
 
-test.describe('Sign in page', () => {
+test.describe('POM-based login', () => {
 
   test.beforeEach(async ({ page }) => {
 
@@ -19,7 +20,7 @@ test.describe('Sign in page', () => {
     //Logging in using POM class
     const loginPage = new LoginPage(page);
     await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-    // await loginPage.loginPage('demo', 'demopass');
+    await loginPage.loginPage(loginData);
 
     //performing a navigation action: goBack and goForward
 

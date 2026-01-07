@@ -1,10 +1,10 @@
-import { test, expect } from '../helpers/Login-Fixture';
-import { loginData } from '../FPM-Realworld-Login/FPM-Realworld.data';
+import { test, expect } from './Login-Fixture';
+import { loginData } from './Login-Data';
 
 
-test.describe('xyz', () => {
+test.describe('Fixture-based login', () => {
 
-    test('successful login with invalid credentials using POM Fixture', async ({ loginPage, page }) => {
+    test('successful login with invalid credentials', async ({ loginPage, page }) => {
 
         //Logging in using POM class
 

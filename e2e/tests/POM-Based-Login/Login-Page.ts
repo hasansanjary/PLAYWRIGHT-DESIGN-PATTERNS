@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 import * as Locators from './Login-Locator';
-import { loginData } from '../FPM-Realworld-Login/FPM-Realworld.data';
+import { loginData } from './Login-Data';
 
 
 export class LoginPage {

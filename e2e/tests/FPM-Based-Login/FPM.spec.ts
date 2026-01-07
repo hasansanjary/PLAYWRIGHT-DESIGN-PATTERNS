@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { loginData } from './FPM-Realworld.data';
-import { realWorldLogin } from './FPM-Realworld.actions';
+import { loginData } from './FPM-Data';
+import { realWorldLogin } from './FPM-Actions';
 
-test.describe('FPM Sign in page', () => {
+test.describe('FPM-based login', () => {
 
   test.beforeEach(async ({ page }) => {
     // await page.goto('http://localhost:3000/signin');
