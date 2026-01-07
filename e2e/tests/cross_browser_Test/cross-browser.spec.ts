@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../POM-Login-TestExamples/login';
 const playwright = require('playwright/test');
+// import { realWorldLogin } from './FPM-Realworld.actions';
 
 test.describe.configure({ mode: 'parallel' });
 
@@ -15,7 +16,7 @@ test('successful cross browser login with valid credentials', async ({ browserNa
         await page.goto('https://parabank.parasoft.com/parabank/index.htm');
 
         const loginPage = new LoginPage(page);
-        await loginPage.loginPage('demo', 'demopass');
+        // await loginPage.loginPage('demo', 'demopass');
 
 
         await page.screenshot({ path: `pom-login-${browserType.name()}.png`, fullPage: true });
