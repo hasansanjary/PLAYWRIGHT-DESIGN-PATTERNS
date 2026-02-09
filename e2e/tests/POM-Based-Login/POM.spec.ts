@@ -20,7 +20,8 @@ test.describe('POM-based login', () => {
     //Logging in using POM class
     const loginPage = new LoginPage(page);
     await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-    await loginPage.loginPage(loginData);
+    // await loginPage.loginPage(loginData);
+    await loginPage.loginPage();
 
     //performing a navigation action: goBack and goForward
 

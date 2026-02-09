@@ -9,7 +9,7 @@ test.describe('FPM-based login', () => {
     await page.goto('/');
   });
 
-  test('successful login with valid credentials', async ({ page }) => {
+  test('successful login with valid credentials using FPM', async ({ page }) => {
     // Enter valid credentials
     await realWorldLogin(page, loginData);
 

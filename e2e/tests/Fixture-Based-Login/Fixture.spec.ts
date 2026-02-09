@@ -1,25 +1,26 @@
 import { test, expect } from './Login-Fixture';
-import { loginData } from './Login-Data';
+import { loginData } from './LoginData';
 
 
 test.describe('Fixture-based login', () => {
 
-    test('successful login with invalid credentials', async ({ loginPage, page }) => {
+    test('successful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
 
         //Logging in using POM class
 
         const Page = loginPage;
 
         await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-        await Page.loginPage(loginData);
+        // await Page.loginPage(loginData);
+        await Page.loginPage();
 
         await page.waitForLoadState('load');
-        await expect(Page.internalErrorMessage).toHaveText('The user and pass could not be verified.');
+        await expect(Page.internalErrorMessage).toHaveText('The username and password could not be verified.');
 
     });
 
     test.skip('Login with Empty Fields shows validation and does not log in', async ({ loginPage }) => {
-        
+
         const Page = loginPage;
 
         await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
