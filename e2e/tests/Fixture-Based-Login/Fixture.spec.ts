@@ -7,7 +7,7 @@ test.describe('Fixture-based login', () => {
     test('@smoke1 successful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
         
 
-        //Logging in using POM class
+        //Logging in using POM clas
 
         const Page = loginPage;
 
