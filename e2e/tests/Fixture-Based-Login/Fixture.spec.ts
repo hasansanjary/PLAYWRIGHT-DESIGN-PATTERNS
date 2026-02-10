@@ -4,7 +4,7 @@ import { loginData } from './LoginData';
 
 test.describe('Fixture-based login', () => {
 
-    test('@smoke successful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
+    test('[@smoke1] successful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
 
         //Logging in using POM class
 
@@ -19,7 +19,7 @@ test.describe('Fixture-based login', () => {
 
     });
 
-    test.skip('Login with Empty Fields shows validation and does not log in', async ({ loginPage }) => {
+    test('@smoke2 Login with Empty Fields shows validation and does not log in', async ({ loginPage }) => {
 
         const Page = loginPage;
 
