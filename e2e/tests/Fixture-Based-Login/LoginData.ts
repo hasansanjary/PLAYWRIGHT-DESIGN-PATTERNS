@@ -4,6 +4,6 @@ interface LoginData {
 }
 
 export const loginData: LoginData = {
-  username: "demologin",
-  password: "demopass",
+  username: process.env.USERNAME || '',
+  password: process.env.PASSWORD || '',
 }
