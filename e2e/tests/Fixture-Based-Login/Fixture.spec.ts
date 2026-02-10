@@ -4,7 +4,7 @@ import { loginData } from './LoginData';
 
 test.describe('Fixture-based login', () => {
 
-    test('successful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
+    test('@smoke successful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
 
         //Logging in using POM class
 
