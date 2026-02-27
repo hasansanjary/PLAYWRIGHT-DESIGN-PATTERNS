@@ -4,9 +4,9 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-import dotenv from 'dotenv';
-import path from 'path';
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+// import dotenv from 'dotenv';
+// import path from 'path';
+// dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -46,11 +46,13 @@ export default defineConfig({
     screenshot: 'on',
 
     video: 'on'
-  
+
   },
 
   /* Configure projects for major browsers */
   projects: [
+
+    /*
     {
       name: 'data-setup',
       testMatch: /.*\.data-load\.setup\.ts/,
@@ -62,25 +64,31 @@ export default defineConfig({
       testMatch: /.*\.data-cleanup\.ts/,
     },
 
+    */
+
     {
       name: 'smoke',
-      use: { ...devices['Desktop Chrome'],
-        viewport: { width: 1280, height: 720 },
-        baseURL: 'http://localhost:3000',
-        trace: 'on'
+      // grep: '/@smoke/'
+      use: {
+        ...devices['Desktop Chrome'],
+        // viewport: { width: 1280, height: 720 },
+        // baseURL: 'http://localhost:3000',
+        // trace: 'on'
 
       },
-      testMatch: /.*\.spec\.ts/,
-      dependencies: ['data-setup'],
-      fullyParallel: false,
-      
+      /*  
+        testMatch: /.*\.spec\.ts/,
+        dependencies: ['data-setup'],
+        fullyParallel: false,
+      */
+
     },
 
     {
       name: 'regression',
       use: { ...devices['Desktop Chrome'] },
-      testIgnore: /.*\.spec\.ts/,
-      dependencies: ['smoke'],
+      // testIgnore: /.*\.spec\.ts/,
+      // dependencies: ['smoke'],
     },
 
     /* Test against mobile viewports. */
