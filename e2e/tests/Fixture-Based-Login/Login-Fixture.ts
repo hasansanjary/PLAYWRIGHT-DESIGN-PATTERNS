@@ -6,7 +6,7 @@ const test = base.extend<{ loginPage: LoginPage }>({
         const loginPage = new LoginPage(page);
         await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
         await use(loginPage);
-    },
+    }
 });
 
 export { test };

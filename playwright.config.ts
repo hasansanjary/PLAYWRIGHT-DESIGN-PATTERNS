@@ -85,8 +85,8 @@ export default defineConfig({
     },
 
     {
-      name: 'regression',
-      use: { ...devices['Desktop Chrome'] },
+      // name: 'regression',
+      // use: { ...devices['Desktop Chrome'] },
       // testIgnore: /.*\.spec\.ts/,
       // dependencies: ['smoke'],
     },

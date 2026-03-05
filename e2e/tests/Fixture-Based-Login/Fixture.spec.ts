@@ -10,9 +10,6 @@ test.describe('Fixture-based login', () => {
         //Logging in using POM clas
 
         const Page = loginPage;
-
-        await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-        // await Page.loginPage(loginData);
         await Page.loginPage();
 
         await page.waitForLoadState('load');
@@ -23,8 +20,6 @@ test.describe('Fixture-based login', () => {
     test('@regression Login with Empty Fields shows validation and does not log in', async ({ loginPage }) => {
 
         const Page = loginPage;
-
-        await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
         // Do not fill any fields
         await Page.clickLoginButton(); // Assumes you have a method to click login
 
