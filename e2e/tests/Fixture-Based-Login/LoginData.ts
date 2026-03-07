@@ -17,4 +17,11 @@ interface LoginData {
 export const loginData: LoginData = {
   username: "demologin",
   password: "demopass",
+
+}
+
+export const invalidLoginData: LoginData = {
+  username: "login",
+  password: "pass",
+
 }

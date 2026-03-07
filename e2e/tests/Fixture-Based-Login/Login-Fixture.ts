@@ -1,13 +1,12 @@
-import { test as base } from '@playwright/test';
-import { LoginPage } from './Login-Page';
+// import { test as base } from '@playwright/test';
+// import { LoginPage } from './Login-Page';
 
-const test = base.extend<{ loginPage: LoginPage }>({
-    loginPage: async ({ page }, use) => {
-        const loginPage = new LoginPage(page);
-        await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-        await use(loginPage);
-    }
-});
+// const test = base.extend<{ loginPage: LoginPage }>({
 
-export { test };
-export { expect } from '@playwright/test';
+//     loginPage: async ({ page }, use) => {
+//         await use(new LoginPage(page));
+//     }
+// });
+
+// export { test };
+// export { expect } from '@playwright/test';

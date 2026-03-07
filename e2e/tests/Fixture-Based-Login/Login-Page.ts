@@ -1,6 +1,7 @@
 import { Page, Locator } from "@playwright/test";
 import * as Locators from './Login-Locators';
 import { loginData } from './LoginData';
+import { invalidLoginData } from './LoginData';
 
 
 export class LoginPage {
@@ -47,9 +48,19 @@ export class LoginPage {
     // }
 
     
-    async loginPage() {
+    async login() {
         await this.usernameInput.fill(loginData.username);
         await this.passwordInput.fill(loginData.password);
+        // await this.rememberMeCheckbox.uncheck();
+        await this.signInButton.click();
+
+
+
+    }
+
+      async invalidLogin() {
+        await this.usernameInput.fill(invalidLoginData.username);
+        await this.passwordInput.fill(invalidLoginData.password);
         // await this.rememberMeCheckbox.uncheck();
         await this.signInButton.click();
 
