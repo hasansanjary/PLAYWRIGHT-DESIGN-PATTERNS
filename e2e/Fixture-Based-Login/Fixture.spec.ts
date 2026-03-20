@@ -5,7 +5,7 @@ import { loginData } from './LoginData';
 test.describe('Fixture-based login', () => {
 
     test('@smoke unsuccessful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
-        
+
 
         //Logging in using POM clas
 
@@ -18,15 +18,15 @@ test.describe('Fixture-based login', () => {
 
     });
 
-     test('@smoke successfull login with valid credentials using Fixture', async ({ loginPage, page }) => {
-        
+    test('@smoke successfull login with valid credentials using Fixture', async ({ loginPage, page }) => {
+
 
         //Logging in using POM clas
 
         const Page = loginPage;
         await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
         await Page.login();
-    
+
 
     });
 
@@ -46,11 +46,16 @@ test.describe('Fixture-based login', () => {
         await expect(Page.loginForm).toBeVisible();
     });
 
-    test('@regression Dashboard shows successful login', async ({ dashboardPage }) => {
+    test('@regression Dashboard shows successful login', async ({ loginPage, dashboardPage }) => {
+
+        const Page = loginPage;
+        await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
+        await Page.login();
+
+        await dashboardPage.page.waitForLoadState('load');
+        await expect(dashboardPage.page).toHaveTitle("ParaBank | Accounts Overview");
 
 
-       await expect(dashboardPage.homepageTitle).toHaveText('ParaBank | Welcome | Online Banking');
-        
     });
 
 });

@@ -10,7 +10,7 @@ export class DashboardPage {
     constructor(page: Page) {
         
         this.page = page;
-        this.homepageTitle = page.getByTitle('ParaBank | Welcome | Online Banking');
+        this.homepageTitle = page.getByTitle("ParaBank | Accounts Overview");
 
         // this.usernameInput = page.locator('//input[@type=\'text\']');
         // this.passwordInput = page.locator('//input[@type=\'password\']');

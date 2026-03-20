@@ -15,10 +15,6 @@ const test = base.extend<MyFixtures>({
     },
 
     dashboardPage: async ({ page }, use) => {
-
-        const loginPage = new LoginPage(page);
-        await loginPage.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-        await loginPage.login();
         await use(new DashboardPage(page));
     }
 
