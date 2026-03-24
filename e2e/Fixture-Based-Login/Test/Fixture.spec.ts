@@ -58,8 +58,6 @@ test.describe('Fixture-based login', () => {
         await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
         await Page.login();
 
-        await page.context().storageState({ path: 'auth.json' });
-
         await dashboardPage.page.waitForLoadState('load');
         await expect(page).toHaveTitle("ParaBank | Accounts Overview");
 
@@ -68,10 +66,9 @@ test.describe('Fixture-based login', () => {
 
       test('@regression Dashboard shows successful logout', async ({ loginPage, dashboardPage, appNavigator, page }) => {
 
-        // const Page = loginPage;
-        // await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
-        // await Page.login();
-        test.use({ storageState: 'auth.json' });
+        const Page = loginPage;
+        await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
+        await Page.login();
         
         const nav = appNavigator;
         await nav.goTo('dashboard');
