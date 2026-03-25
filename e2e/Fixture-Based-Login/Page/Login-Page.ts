@@ -2,6 +2,8 @@ import { Page, Locator } from "@playwright/test";
 import * as Locators from '../Locators/Login-Locators';
 import { loginData } from '../TestData/LoginData';
 import { invalidLoginData } from '../TestData/LoginData';
+import { HelperFunctions } from "../helper/helperFunctions";
+import { BasePage } from "../pages/basePage";
 
 
 export class LoginPage {
@@ -14,9 +16,14 @@ export class LoginPage {
     readonly emptyLoginFieldValidation: Locator;
     readonly loginForm: Locator;
     readonly internalErrorMessage: Locator;
+    readonly helper: HelperFunctions;
+
+    
 
     constructor(page: Page) {
+        
         this.page = page;
+        this.helper = new HelperFunctions(page);
 
         // this.usernameInput = page.locator('//input[@type=\'text\']');
         // this.passwordInput = page.locator('//input[@type=\'password\']');
@@ -47,29 +54,37 @@ export class LoginPage {
 
     // }
 
-    
+
     async login() {
         await this.usernameInput.fill(loginData.username);
         await this.passwordInput.fill(loginData.password);
         // await this.rememberMeCheckbox.uncheck();
-        await this.signInButton.click();
+        // await this.signInButton.click();
+
+        // Using helper function to click the sign-in button
+        await this.helper.click(this.signInButton);
 
 
 
     }
 
-      async invalidLogin() {
+    async invalidLogin() {
         await this.usernameInput.fill(invalidLoginData.username);
         await this.passwordInput.fill(invalidLoginData.password);
         // await this.rememberMeCheckbox.uncheck();
-        await this.signInButton.click();
+        // await this.signInButton.click();
+
+        // Using helper function to click the sign-in button
+        await this.helper.click(this.signInButton);
 
 
 
     }
 
     async clickLoginButton() {
-        await this.signInButton.click();
+        // await this.signInButton.click();
+        await this.helper.click(this.signInButton);
+
     }
     /*
         async newLogin(logInput: typeof loginData) {
