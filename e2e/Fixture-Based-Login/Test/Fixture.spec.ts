@@ -5,7 +5,7 @@ import { AppNavigator } from '../AppNavigation/AppNavigator';
 
 test.describe('Fixture-based login', () => {
 
-    test.skip('@smoke unsuccessful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
+    test('@smoke unsuccessful login with invalid credentials using Fixture', async ({ loginPage, page }) => {
 
 
         //Logging in using POM clas
@@ -22,7 +22,7 @@ test.describe('Fixture-based login', () => {
 
     });
 
-    test.skip('@smoke successfull login with valid credentials using Fixture', async ({ loginPage, page }) => {
+    test('@smoke successfull login with valid credentials using Fixture', async ({ loginPage, page }) => {
 
 
         //Logging in using POM clas
@@ -37,7 +37,7 @@ test.describe('Fixture-based login', () => {
     });
 
 
-    test.skip('@regression Login with Empty Fields shows validation and does not log in', async ({ loginPage }) => {
+    test('@regression Login with Empty Fields shows validation and does not log in', async ({ loginPage }) => {
 
         const Page = loginPage;
         // Do not fill any fields
@@ -52,7 +52,7 @@ test.describe('Fixture-based login', () => {
         await expect(Page.loginForm).toBeVisible();
     });
 
-    test('@regression Dashboard shows successful login', async ({ loginPage, dashboardPage, page }) => {
+    test('Dashboard shows successful login', async ({ loginPage, dashboardPage, page }) => {
 
         const Page = loginPage;
         await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
@@ -64,7 +64,7 @@ test.describe('Fixture-based login', () => {
 
     });
 
-      test('@regression Dashboard shows successful logout', async ({ loginPage, dashboardPage, appNavigator, page }) => {
+      test('Dashboard shows successful logout', async ({ loginPage, dashboardPage, appNavigator, page }) => {
 
         const Page = loginPage;
         await Page.navigateToLoginPage('https://parabank.parasoft.com/parabank/index.htm');
